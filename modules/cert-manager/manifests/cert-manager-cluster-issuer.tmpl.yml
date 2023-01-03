@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: ${clusterIssueName}
+spec:
+  acme:
+    server: ${acmeServer}
+    email: net-tools@${dnsZone}
+    privateKeySecretRef:
+      name: ${privateKeySecretRefName}
+    solvers:
+    - selector:
+        dnsZones:
+          - ${dnsZone}
+      dns01:
+        cloudDNS:
+          project: ${project}
