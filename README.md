@@ -42,9 +42,9 @@ module "cert_manager" {
   clusterIssuers  = {
     letsencrypt-prod = {
       acmeServer: "https://acme-v02.api.letsencrypt.org/directory",
-      dnsZone: "cloudinterplay.com",
+      dnsZone: "example.com",
       privateKeySecretRefName: "letsencrypt-prod",
-      project: "kubernetes-286419"
+      project: "gcp-project-id"
     }
   }
 }
